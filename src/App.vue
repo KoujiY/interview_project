@@ -1,5 +1,21 @@
-<script setup></script>
+<script setup>
+import { ref } from "vue";
+import AppMainPage from "./components/AppMainPage.vue";
 
-<template></template>
+const modalState = ref(false);
 
-<style scoped></style>
+function handleModalState() {
+  modalState.value = !modalState.value;
+}
+</script>
+
+<template>
+  <AppMainPage :handle-modal-state="handleModalState"></AppMainPage>
+</template>
+
+<style>
+body {
+  margin: 0;
+  padding: 0;
+}
+</style>
